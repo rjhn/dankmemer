@@ -14,14 +14,14 @@ client.remove_command('help')
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="Dank Memer Farming!", url="https://www.twitch.com/smokedlel"))
+    await client.change_presence(activity=discord.Streaming(name="Dank Memer Farming!", url="https://www.twitch.tv/smokedlel"))
     print(f'Dank memer bot is running.\nPrefix: x')
 
 @client.command()
 async def help(ctx):
     embed = discord.Embed(title="Commands")
     embed.add_field(name="Commands", value="start\nstop")
-    await ctx.send(embed=embed)
+    await ctx.reply(embed=embed)
 
 @client.command()
 async def start(ctx):
@@ -38,7 +38,7 @@ async def start(ctx):
 @client.command()
 async def stop(ctx):
     embed = discord.Embed(title="stopping", description="Stopping the grind.")
-    await ctx.send(embed=embed)
+    await ctx.reply(embed=embed)
     await client.close()
     os._exit    
         
